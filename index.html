@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener - MSHX</title>
+    <script src="https://kit.fontawesome.com/d436ddeb64.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/hover.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <i class="fa-solid fa-link link"></i>
+            <h1>URL SHORTENER</h1>
+            <div class="originURL">
+                <label for="originalUrl">Enter URL to Shorten :</label>
+                <input type="text" id="originalUrl" placeholder="http://example.com">
+            </div>
+            <div class="buttons">
+                <button id="reload-btn" class="reload-btn btn"><a class="btn hvr-grow" href="#">Reload</a></button>
+                <button id="short-btn" class="short-btn btn"><a class="btn hvr-grow" href="#">Short It</a></button>
+            </div>
+            <div class="shortURL">
+                <label for="shortenedUrl">Shortened URL :</label>
+                <textarea id="shortenedUrl" rows="3" readonly></textarea>
+            </div>
+        </div>
+    </section>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+@import url(https://fonts.googleapis.com/css?family=Gabarito:regular,500,600,700,800,900);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: Gabarito;
+    text-decoration: none;
+}
+/* Exo thin font from Google. */
+
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+$bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC";
+$bg-width: 50px;
+$bg-height: 50px;
+
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@-moz-keyframes    bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@-o-keyframes      bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@keyframes         bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+
+@-webkit-keyframes bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@-moz-keyframes    bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@-o-keyframes      bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@keyframes         bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+
+/* Main styles */
+body {
+  margin-top: 13.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url($bg-url) repeat 0 0;
+  
+  -webkit-animation: bg-scrolling-reverse .92s infinite; /* Safari 4+ */
+  -moz-animation:    bg-scrolling-reverse .92s infinite; /* Fx 5+ */
+  -o-animation:      bg-scrolling-reverse .92s infinite; /* Opera 12+ */
+  animation:         bg-scrolling-reverse .92s infinite; /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function:    linear;
+  -o-animation-timing-function:      linear;
+  animation-timing-function:         linear;
+  
+  &::before {
+    content: "";
+    font-size: 8rem;
+    font-weight: 100;
+    font-style: normal;
+}
+}
+
+.container {
+    backdrop-filter: blur(5px);
+    border: 1px #000000 solid;
+    border-radius: 15px;
+    padding: 20px 30px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 15px;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 0px 0px 10px 0px;
+}
+
+.link {
+    font-size: 50px;
+    margin: 20px 0px 0px 0px;
+}
+
+.originURL {
+    margin: 0 0 10px 0;
+}
+
+.buttons {
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.btn {
+    font-size: 20px;
+    padding: 2px;
+    display: block;
+    width: 100%;
+    margin-right: 30px;
+    color: #999;
+        &:last-of-type {
+            margin-right: 0px;
+        }
+    }
+
+input, textarea {
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    padding: 10px;
+}
